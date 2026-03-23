@@ -6,8 +6,6 @@ Gives AI assistants deep understanding of Sirius framework patterns. Works with 
 
 ## Installation
 
-### From source
-
 ```bash
 git clone <this-repo>
 cd sirius-framework-mcp
@@ -16,21 +14,7 @@ npm run build
 npm link
 ```
 
-### From npm
-
-```bash
-npm install -g sirius-framework-mcp
-```
-
 ## Uninstall
-
-### If installed from npm
-
-```bash
-npm uninstall -g sirius-framework-mcp
-```
-
-### If installed from source
 
 ```bash
 npm unlink -g sirius-framework-mcp
