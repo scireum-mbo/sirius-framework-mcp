@@ -22,18 +22,26 @@ npm link
 npm install -g sirius-framework-mcp
 ```
 
-## Setup
+## Uninstall
 
-The server uses **stdio transport** and auto-detects which Sirius module you're working in from `pom.xml`. Configure it in your MCP client of choice:
-
-### Claude Code
+### If installed from npm
 
 ```bash
-# Global (available in every session):
-claude mcp add sirius --scope user -- sirius-framework-mcp
-
-# Or per-project — create .mcp.json in your project root:
+npm uninstall -g sirius-framework-mcp
 ```
+
+### If installed from source
+
+```bash
+npm unlink -g sirius-framework-mcp
+rm -rf <sirius-framework-mcp-directory>
+```
+
+Then remove the `sirius` entry from your MCP client configuration.
+
+## Setup
+
+The server uses **stdio transport** and auto-detects which Sirius module you're working in from `pom.xml`. Register it as a stdio MCP server in your client of choice:
 
 ```json
 {
@@ -45,23 +53,7 @@ claude mcp add sirius --scope user -- sirius-framework-mcp
 }
 ```
 
-### Cursor
-
-Create `.cursor/mcp.json` in your project root:
-
-```json
-{
-  "mcpServers": {
-    "sirius": {
-      "command": "sirius-framework-mcp"
-    }
-  }
-}
-```
-
-### Other MCP clients
-
-Add `sirius-framework-mcp` as a stdio MCP server. Refer to your client's documentation for the exact configuration format.
+Refer to your MCP client's documentation for the exact configuration file location and format.
 
 ## Try it out
 
@@ -181,4 +173,4 @@ Multi-module Maven projects are detected automatically.
 
 ## License
 
-MIT
+[Apache 2.0](LICENSE)
