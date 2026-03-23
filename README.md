@@ -9,7 +9,7 @@ Gives AI assistants deep understanding of Sirius framework patterns. Works with 
 ### From npm
 
 ```bash
-npm install -g @scireum/sirius-framework-mcp
+npm install -g sirius-framework-mcp
 ```
 
 ### From source
@@ -25,10 +25,10 @@ npm link
 ## Uninstall
 
 ```bash
-npm uninstall -g @scireum/sirius-framework-mcp
+npm uninstall -g sirius-framework-mcp
 ```
 
-If installed from source, use `npm unlink -g @scireum/sirius-framework-mcp` instead.
+If installed from source, use `npm unlink -g sirius-framework-mcp` instead.
 
 Then remove the `sirius` entry from your MCP client configuration.
 
@@ -53,7 +53,7 @@ Or without a global install, using `npx`:
   "mcpServers": {
     "sirius": {
       "command": "npx",
-      "args": ["-y", "@scireum/sirius-framework-mcp"]
+      "args": ["-y", "sirius-framework-mcp"]
     }
   }
 }
