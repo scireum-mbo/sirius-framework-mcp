@@ -1,12 +1,12 @@
 # sirius-framework-mcp
 
-MCP server for the [Sirius framework](https://www.sirius-lib.net).
+[MCP](https://modelcontextprotocol.io/) server for the [Sirius framework](https://www.sirius-lib.net).
 
-Helps AI assistants understand Sirius framework patterns. Provides pattern documentation (resources), codebase introspection (tools), and guided workflows (prompts).
+Gives AI assistants deep understanding of Sirius framework patterns. Works with any MCP-compatible client (Claude Code, Cursor, Windsurf, Cline, etc.). Provides pattern documentation (resources), codebase introspection (tools), and guided workflows (prompts).
 
 ## Installation
 
-### Option 1: Local install (recommended for development)
+### From source
 
 ```bash
 git clone <this-repo>
@@ -16,7 +16,7 @@ npm run build
 npm link
 ```
 
-### Option 2: Global install from npm
+### From npm
 
 ```bash
 npm install -g sirius-framework-mcp
@@ -24,17 +24,16 @@ npm install -g sirius-framework-mcp
 
 ## Setup
 
-### Claude Code (global — works in every session)
+The server uses **stdio transport** and auto-detects which Sirius module you're working in from `pom.xml`. Configure it in your MCP client of choice:
+
+### Claude Code
 
 ```bash
+# Global (available in every session):
 claude mcp add sirius --scope user -- sirius-framework-mcp
+
+# Or per-project — create .mcp.json in your project root:
 ```
-
-That's it. The server auto-detects which Sirius module you're working in from `pom.xml`.
-
-### Claude Code (per-project)
-
-Create `.mcp.json` in your project root:
 
 ```json
 {
@@ -60,28 +59,27 @@ Create `.cursor/mcp.json` in your project root:
 }
 ```
 
+### Other MCP clients
+
+Add `sirius-framework-mcp` as a stdio MCP server. Refer to your client's documentation for the exact configuration format.
+
 ## Try it out
 
-After setup, **start a new Claude Code session** (the MCP server connects on startup) and try:
+After setup, start a new session and try:
 
-**Read a pattern guide:**
 > "Read the sirius entity-triple pattern and explain it"
 
-**Introspect the codebase:**
 > "List all entities in this project"
-> "Show me all framework flags"
-> "What routes are available?"
 
-**Scaffold code:**
 > "Scaffold a new entity called Invoice with fields amount and dueDate"
 
-**Use a guided workflow:**
 > "I want to add a new background job called InvoiceSync"
+
 > "My entity isn't being picked up — help me debug"
 
 ## Workspace detection
 
-The server automatically detects which Sirius layer your project belongs to by reading `pom.xml`:
+The server reads `pom.xml` in the working directory to determine which Sirius layer the project belongs to, then exposes only the relevant resources:
 
 | Detected artifact | Layer | Resources exposed |
 |-------------------|-------|-------------------|

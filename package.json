@@ -1,7 +1,7 @@
 {
   "name": "sirius-framework-mcp",
   "version": "0.1.0",
-  "description": "MCP server for Sirius framework pattern guidance",
+  "description": "MCP server that gives AI assistants deep understanding of Sirius framework patterns",
   "type": "module",
   "bin": {
     "sirius-framework-mcp": "./dist/index.js"
