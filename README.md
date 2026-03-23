@@ -2,7 +2,7 @@
 
 MCP server for the [Sirius framework](https://www.sirius-lib.net).
 
-Helps AI assistants (Claude Code, Cursor, etc.) understand Sirius framework patterns. Provides pattern documentation (resources), codebase introspection (tools), and guided workflows (prompts).
+Helps AI assistants understand Sirius framework patterns. Provides pattern documentation (resources), codebase introspection (tools), and guided workflows (prompts).
 
 ## Installation
 
