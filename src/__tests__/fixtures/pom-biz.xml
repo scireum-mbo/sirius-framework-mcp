@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <groupId>com.scireum</groupId>
+    <artifactId>sirius-biz</artifactId>
+    <version>121.1.1</version>
+    <dependencies>
+        <dependency>
+            <groupId>com.scireum</groupId>
+            <artifactId>sirius-kernel</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.scireum</groupId>
+            <artifactId>sirius-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.scireum</groupId>
+            <artifactId>sirius-db</artifactId>
+        </dependency>
+    </dependencies>
+</project>

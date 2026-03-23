@@ -1,0 +1,41 @@
+{
+  "name": "sirius-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for Sirius framework pattern guidance",
+  "type": "module",
+  "bin": {
+    "sirius-mcp": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc && node scripts/copy-resources.mjs",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "sirius",
+    "framework"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.27.1",
+    "fast-glob": "^3.3.3",
+    "fast-xml-parser": "^5.5.8",
+    "tree-sitter-java": "^0.23.5",
+    "web-tree-sitter": "^0.26.7",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.0"
+  }
+}
