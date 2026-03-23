@@ -1,5 +1,4 @@
-import { Parser, Language } from "web-tree-sitter";
-import type { SyntaxNode } from "web-tree-sitter";
+import { Parser, Language, Node as SyntaxNode } from "web-tree-sitter";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 
@@ -238,6 +237,9 @@ function extractFieldInfo(
 export async function parseJavaFile(source: string): Promise<JavaClassInfo> {
   const p = await getParser();
   const tree = p.parse(source);
+  if (!tree) {
+    return { packageName: "", className: "", superClass: null, interfaces: [], annotations: [], mappings: [], routes: [], fields: [] };
+  }
   const root = tree.rootNode;
 
   // Extract package name
