@@ -4,7 +4,7 @@
   "description": "MCP server that gives AI assistants deep understanding of Sirius framework patterns",
   "type": "module",
   "bin": {
-    "sirius-framework-mcp": "./dist/index.js"
+    "sirius-framework-mcp": "dist/index.js"
   },
   "files": [
     "dist",
