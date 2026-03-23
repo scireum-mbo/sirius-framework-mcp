@@ -1,4 +1,5 @@
 import { describe, it, expect } from "vitest";
+import { existsSync } from "fs";
 import { detectWorkspaceFromPath, SiriusLayer } from "../workspace.js";
 import {
   listEntities,
@@ -9,11 +10,14 @@ import {
   listControllers,
 } from "../tools/index.js";
 
-const SIRIUS_BIZ_ROOT = "/Users/mbo/dev/sirius-biz";
+const SIRIUS_BIZ_ROOT =
+  process.env.SIRIUS_BIZ_ROOT || "../sirius-biz";
 const SIRIUS_BIZ_JAVA = `${SIRIUS_BIZ_ROOT}/src/main/java`;
 const SIRIUS_BIZ_RESOURCES = `${SIRIUS_BIZ_ROOT}/src/main/resources`;
 
-describe("sirius-biz integration tests", { timeout: 60_000 }, () => {
+const hasSiriusBiz = existsSync(`${SIRIUS_BIZ_ROOT}/pom.xml`);
+
+describe.skipIf(!hasSiriusBiz)("sirius-biz integration tests", { timeout: 60_000 }, () => {
   describe("workspace detection", () => {
     it("should detect sirius-biz as layer BIZ with correct artifactId", async () => {
       const info = await detectWorkspaceFromPath(SIRIUS_BIZ_ROOT);

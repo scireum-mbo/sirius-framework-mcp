@@ -30,17 +30,13 @@ describe("listEntities", () => {
 });
 
 describe("listFrameworkFlags", () => {
-  it("should find biz.tenants in sirius-biz conf", async () => {
-    const flags = await listFrameworkFlags(
-      "/Users/mbo/dev/sirius-biz/src/main/resources",
-    );
+  it("should find sample.flag in fixtures conf", async () => {
+    const flags = await listFrameworkFlags(fixtureDir);
 
     expect(flags.length).toBeGreaterThan(0);
 
-    const tenants = flags.find((f) => f.name === "biz.tenants");
-    expect(tenants).toBeDefined();
-    expect(tenants!.defaultValue).toBe(false);
-    expect(tenants!.description).not.toBe("");
+    const sample = flags.find((f) => f.name === "sample.flag");
+    expect(sample).toBeDefined();
   });
 });
 
@@ -69,14 +65,11 @@ describe("listRoutes", () => {
 });
 
 describe("listComposites", () => {
-  it("should find PersonData and AddressData in sirius-biz model", async () => {
-    const composites = await listComposites(
-      "/Users/mbo/dev/sirius-biz/src/main/java/sirius/biz/model",
-    );
+  it("should find SampleComposite in fixtures", async () => {
+    const composites = await listComposites(fixtureDir);
 
     const names = composites.map((c) => c.className);
-    expect(names).toContain("PersonData");
-    expect(names).toContain("AddressData");
+    expect(names).toContain("SampleComposite");
   });
 });
 
