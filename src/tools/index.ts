@@ -13,3 +13,23 @@ export type {
   FullRouteInfo,
   ControllerInfo,
 } from "./introspection.js";
+
+export {
+  scaffoldEntity,
+  scaffoldJob,
+  scaffoldTest,
+  scaffoldComposite,
+  scaffoldController,
+  toUpperSnake,
+} from "./scaffold.js";
+
+export type {
+  FieldDefinition,
+  ScaffoldFile,
+  ScaffoldResult,
+  ScaffoldEntityOptions,
+  ScaffoldJobOptions,
+  ScaffoldTestOptions,
+  ScaffoldCompositeOptions,
+  ScaffoldControllerOptions,
+} from "./scaffold.js";
