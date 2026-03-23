@@ -6,6 +6,8 @@ Gives AI assistants deep understanding of Sirius framework patterns. Works with 
 
 ## Installation
 
+### From npm
+
 ```bash
 npm install -g @scireum/sirius-framework-mcp
 ```
@@ -39,6 +41,19 @@ The server uses **stdio transport** and auto-detects which Sirius module you're 
   "mcpServers": {
     "sirius": {
       "command": "sirius-framework-mcp"
+    }
+  }
+}
+```
+
+Or without a global install, using `npx`:
+
+```json
+{
+  "mcpServers": {
+    "sirius": {
+      "command": "npx",
+      "args": ["-y", "@scireum/sirius-framework-mcp"]
     }
   }
 }
