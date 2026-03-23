@@ -1,5 +1,5 @@
 {
-  "name": "sirius-framework-mcp",
+  "name": "@scireum/sirius-framework-mcp",
   "version": "0.1.0",
   "description": "MCP server that gives AI assistants deep understanding of Sirius framework patterns",
   "type": "module",

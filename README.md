@@ -7,6 +7,12 @@ Gives AI assistants deep understanding of Sirius framework patterns. Works with 
 ## Installation
 
 ```bash
+npm install -g @scireum/sirius-framework-mcp
+```
+
+### From source
+
+```bash
 git clone <this-repo>
 cd sirius-framework-mcp
 npm install
@@ -17,9 +23,10 @@ npm link
 ## Uninstall
 
 ```bash
-npm unlink -g sirius-framework-mcp
-rm -rf <sirius-framework-mcp-directory>
+npm uninstall -g @scireum/sirius-framework-mcp
 ```
+
+If installed from source, use `npm unlink -g @scireum/sirius-framework-mcp` instead.
 
 Then remove the `sirius` entry from your MCP client configuration.
 
