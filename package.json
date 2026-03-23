@@ -22,6 +22,10 @@
     "framework"
   ],
   "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/scireum-mbo/sirius-framework-mcp.git"
+  },
   "engines": {
     "node": ">=18"
   },
