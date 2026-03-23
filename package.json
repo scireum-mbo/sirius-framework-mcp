@@ -1,10 +1,10 @@
 {
-  "name": "sirius-mcp",
+  "name": "sirius-framework-mcp",
   "version": "0.1.0",
   "description": "MCP server for Sirius framework pattern guidance",
   "type": "module",
   "bin": {
-    "sirius-mcp": "./dist/index.js"
+    "sirius-framework-mcp": "./dist/index.js"
   },
   "files": [
     "dist",

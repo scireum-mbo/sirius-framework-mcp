@@ -1,4 +1,4 @@
-# sirius-mcp
+# sirius-framework-mcp
 
 MCP server for the [Sirius framework](https://www.sirius-lib.net).
 
@@ -10,7 +10,7 @@ Helps AI assistants (Claude Code, Cursor, etc.) understand Sirius framework patt
 
 ```bash
 git clone <this-repo>
-cd sirius-mcp
+cd sirius-framework-mcp
 npm install
 npm run build
 npm link
@@ -19,7 +19,7 @@ npm link
 ### Option 2: Global install from npm
 
 ```bash
-npm install -g sirius-mcp
+npm install -g sirius-framework-mcp
 ```
 
 ## Setup
@@ -27,7 +27,7 @@ npm install -g sirius-mcp
 ### Claude Code (global — works in every session)
 
 ```bash
-claude mcp add sirius --scope user -- sirius-mcp
+claude mcp add sirius --scope user -- sirius-framework-mcp
 ```
 
 That's it. The server auto-detects which Sirius module you're working in from `pom.xml`.
@@ -40,7 +40,7 @@ Create `.mcp.json` in your project root:
 {
   "mcpServers": {
     "sirius": {
-      "command": "sirius-mcp"
+      "command": "sirius-framework-mcp"
     }
   }
 }
@@ -54,7 +54,7 @@ Create `.cursor/mcp.json` in your project root:
 {
   "mcpServers": {
     "sirius": {
-      "command": "sirius-mcp"
+      "command": "sirius-framework-mcp"
     }
   }
 }

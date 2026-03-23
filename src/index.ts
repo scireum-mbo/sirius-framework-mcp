@@ -55,15 +55,15 @@ async function main() {
   }
 
   console.error(
-    `[sirius-mcp] Layer detected: ${workspace.layer}`,
+    `[sirius-framework-mcp] Layer detected: ${workspace.layer}`,
   );
   console.error(
-    `[sirius-mcp] Exposed layers: ${workspace.exposedLayers.join(", ")}`,
+    `[sirius-framework-mcp] Exposed layers: ${workspace.exposedLayers.join(", ")}`,
   );
 
   // Create the MCP server
   const server = new McpServer({
-    name: "sirius-mcp",
+    name: "sirius-framework-mcp",
     version: "0.1.0",
   });
 
@@ -91,17 +91,17 @@ async function main() {
         }));
       } catch (err) {
         console.error(
-          `[sirius-mcp] Failed to register resource ${res.uri}:`,
+          `[sirius-framework-mcp] Failed to register resource ${res.uri}:`,
           err,
         );
       }
     }
 
     console.error(
-      `[sirius-mcp] Registered ${resources.length} resources`,
+      `[sirius-framework-mcp] Registered ${resources.length} resources`,
     );
   } catch (err) {
-    console.error("[sirius-mcp] Failed to load resources:", err);
+    console.error("[sirius-framework-mcp] Failed to load resources:", err);
   }
 
   // -----------------------------------------------------------------------
@@ -355,14 +355,14 @@ async function main() {
       }
     } catch (err) {
       console.error(
-        `[sirius-mcp] Failed to register prompt ${prompt.name}:`,
+        `[sirius-framework-mcp] Failed to register prompt ${prompt.name}:`,
         err,
       );
     }
   }
 
   console.error(
-    `[sirius-mcp] Registered ${allPrompts.length} prompts`,
+    `[sirius-framework-mcp] Registered ${allPrompts.length} prompts`,
   );
 
   // -----------------------------------------------------------------------
@@ -372,10 +372,10 @@ async function main() {
   const transport = new StdioServerTransport();
   await server.connect(transport);
 
-  console.error("[sirius-mcp] Server started on stdio transport");
+  console.error("[sirius-framework-mcp] Server started on stdio transport");
 }
 
 main().catch((err) => {
-  console.error("[sirius-mcp] Fatal error:", err);
+  console.error("[sirius-framework-mcp] Fatal error:", err);
   process.exit(1);
 });
